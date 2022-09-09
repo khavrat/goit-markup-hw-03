@@ -9,7 +9,7 @@
     --border-line-portfolio: #EEEEEE;
     --logo-accent: #000000;
     --footer-bg-color: #2F303A;
-    
+    --project-grid-gap: 30px;
 }
 
 body {
@@ -31,6 +31,12 @@ ul {
 
 ul {
     padding-left: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .header {
@@ -68,6 +74,7 @@ ul {
     padding-top: 24px;
     padding-bottom: 25px;
 }
+
 /* Навігація хедер */
 .site-nav {
     display: flex;
@@ -77,7 +84,7 @@ ul {
 .contacts {
     display: flex;
     list-style: none;
-    gap: 50px;
+    column-gap: 50px;
 }
 
 .nav-list {
@@ -122,7 +129,7 @@ ul {
 }
 
 .section.hero {
-    padding-top: 200px 0;
+    padding: 200px 0;
     text-align: center;
     background-color: var(--footer-bg-color);
 }
@@ -163,8 +170,16 @@ ul {
 .section.feature {
     padding-bottom: calc(94px/2);
 }
-.feature-title {
-    display: none;
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect (0 0 0 0);
+    overflow: hidden;
 }
 
 .feature-list,
@@ -172,7 +187,7 @@ ul {
 .team-list {
     display: flex;
     list-style: none;
-    gap: 30px;
+    column-gap: 30px;
 }
 
 .feature-item {
@@ -210,10 +225,6 @@ ul {
     color: var(--prymary-text-color);
 }
 
-.work-img {
-    display: block;
-}
-
 /* Наша команда */
 .section.team {
     background-color: var(--secondary-bg-color);
@@ -224,10 +235,6 @@ ul {
     background: var(--primary-bg-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
-}
-
-.team-photo {
-    display: block;
 }
 
 .team-wrapper {
@@ -286,19 +293,12 @@ ul {
 }
 
 /* Портфоліо фільтр */
-.portfolio-title {
-    display: none;
-}
-
-.portfolio-filter,
-.portfolio-projects {
+.portfolio-filter {
     display: flex;
     list-style: none;
     justify-content: center;
-}
-
-.portfolio-filter {
     margin-bottom: 50px;
+    column-gap: 8px;
 }
 
 .button.select {
@@ -317,26 +317,23 @@ ul {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.portfolio-item:not(:last-child) {
-    margin-right: 8px;
-}
-
 /* Портфоліо картки проектів */
 .portfolio-projects {
+    list-style: none;
+    display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    margin-top: calc(-1 * var(--project-grid-gap));
+    margin-left: calc(-1 * var(--project-grid-gap));
 }
 
-.project-item { 
-    background: var(--primary-bg-color);
+.portfolio-projects > .project-item {
+    flex-basis: calc(100% / 3 - var(--project-grid-gap));
+    margin-top: var(--project-grid-gap);
+    margin-left: var(--project-grid-gap);
 }
 
-.project-link {
-    text-decoration: none;
-}
-
-.project-photo {
-    display: block;
+.project-item {
+    background-color: var(--primary-bg-color);
 }
 
 .project-wrapper {
@@ -344,7 +341,7 @@ ul {
     border-right: 1px solid var(--border-line-portfolio);
     border-bottom: 1px solid var(--border-line-portfolio);
     border-left: 1px solid var(--border-line-portfolio);
-}
+} 
 
 .project-name {
     margin-bottom: 4px;
@@ -360,6 +357,8 @@ ul {
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
 }
+
+
 
 
 
