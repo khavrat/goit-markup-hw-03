@@ -187,7 +187,7 @@ img {
 .team-list {
     display: flex;
     list-style: none;
-    column-gap: 30px;
+    gap: var(--project-grid-gap);
 }
 
 .feature-item {
@@ -269,8 +269,11 @@ img {
     color: var(--primary-bg-color);
 }
 
-.address-list {
+.address {
     margin-top: 20px;
+}
+
+.address-list {
     list-style: none;
 }
 
@@ -287,8 +290,11 @@ img {
     color: var(--primary-bg-color);
 }
 
-.address-contact {
+.address-item:not(:first-child) {
     margin-top: 9px;
+}
+
+.address-contact {
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -298,7 +304,7 @@ img {
     list-style: none;
     justify-content: center;
     margin-bottom: 50px;
-    column-gap: 8px;
+    gap: 8px;
 }
 
 .button.select {
@@ -322,14 +328,7 @@ img {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1 * var(--project-grid-gap));
-    margin-left: calc(-1 * var(--project-grid-gap));
-}
-
-.portfolio-projects > .project-item {
-    flex-basis: calc(100% / 3 - var(--project-grid-gap));
-    margin-top: var(--project-grid-gap);
-    margin-left: var(--project-grid-gap);
+    gap: var(--project-grid-gap);
 }
 
 .project-item {
